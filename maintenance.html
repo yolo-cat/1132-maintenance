@@ -317,6 +317,27 @@
             font-size: 1.1rem;
         }
 
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+        }
+
+        .discount-price {
+            color: #a435f0;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(164, 53, 240, 0.2);
+        }
+
+        .discount-timer {
+            color: #a435f0;
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            font-weight: 500;
+        }
+
         @media (max-width: 768px) {
             .courses-grid {
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -366,7 +387,11 @@
                     <div class="course-info">
                         <h4 class="course-title">Python 程式設計入門：從零開始學習</h4>
                         <p class="course-instructor">講師：John Doe</p>
-                        <p class="course-price">NT$ 1,280</p>
+                        <p class="course-price">
+                            <span class="original-price">NT$ 1,280</span>
+                            <span class="discount-price">NT$ 299</span>
+                        </p>
+                        <p class="discount-timer">2 小時後優惠價</p>
                     </div>
                 </a>
                 <a href="https://www.udemy.com/course/web-development-bootcamp/" class="course-card">
@@ -374,7 +399,11 @@
                     <div class="course-info">
                         <h4 class="course-title">網頁開發全端課程：HTML, CSS, JavaScript</h4>
                         <p class="course-instructor">講師：Jane Smith</p>
-                        <p class="course-price">NT$ 1,680</p>
+                        <p class="course-price">
+                            <span class="original-price">NT$ 1,680</span>
+                            <span class="discount-price">NT$ 299</span>
+                        </p>
+                        <p class="discount-timer">2 小時後優惠價</p>
                     </div>
                 </a>
                 <a href="https://www.udemy.com/course/data-science-machine-learning/" class="course-card">
@@ -382,7 +411,11 @@
                     <div class="course-info">
                         <h4 class="course-title">資料科學與機器學習實戰課程</h4>
                         <p class="course-instructor">講師：Mike Johnson</p>
-                        <p class="course-price">NT$ 2,280</p>
+                        <p class="course-price">
+                            <span class="original-price">NT$ 2,280</span>
+                            <span class="discount-price">NT$ 299</span>
+                        </p>
+                        <p class="discount-timer">2 小時後優惠價</p>
                     </div>
                 </a>
             </div>
