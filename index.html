@@ -64,23 +64,23 @@
 
         .maintenance-container {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.2rem;
             background-color: var(--container-bg);
             border-radius: 8px;
             box-shadow: 0 4px 20px var(--shadow-color);
-            max-width: 1200px;
+            max-width: 1000px;
             width: 95%;
             animation: fadeIn 1s ease-out;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
             display: grid;
             grid-template-rows: auto auto auto;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .udemy-logo {
-            width: 100px;
-            height: 35px;
-            margin-bottom: 1rem;
+            width: 90px;
+            height: 32px;
+            margin-bottom: 0.8rem;
             background-image: url('https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg');
             background-size: contain;
             background-repeat: no-repeat;
@@ -94,45 +94,34 @@
         }
 
         .loading-icon {
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border-color);
-            border-top: 3px solid #a435f0;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            animation: spin 1s linear infinite;
+            width: 35px;
+            height: 35px;
+            margin: 0 auto 0.8rem;
         }
 
         h1 {
-            color: var(--text-color);
-            margin-bottom: 0.5rem;
-            font-size: 2rem;
-            font-weight: 700;
-            animation: pulse 2s infinite;
+            margin-bottom: 0.4rem;
+            font-size: 1.8rem;
         }
 
         h2 {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
         }
 
         .notification-form {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
         }
 
         .notification-form h3 {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .form-group {
-            margin-bottom: 1rem;
-            text-align: left;
+            margin-bottom: 0.8rem;
         }
 
         .form-group label {
@@ -143,13 +132,13 @@
         }
 
         .form-group input {
-            padding: 8px;
-            font-size: 0.9rem;
+            padding: 6px 12px;
+            font-size: 0.85rem;
         }
 
         .submit-button {
-            padding: 8px 16px;
-            font-size: 0.9rem;
+            padding: 6px 12px;
+            font-size: 0.85rem;
         }
 
         .success-message {
@@ -167,30 +156,28 @@
         }
 
         .popular-courses {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
         }
 
         .popular-courses h3 {
-            color: var(--text-color);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 0.8rem;
+            margin-top: 0.8rem;
         }
 
         .course-card {
             background-color: var(--container-bg);
-            border-radius: 6px;
+            border-radius: 4px;
             overflow: hidden;
             transition: transform 0.3s ease;
-            box-shadow: 0 2px 8px var(--shadow-color);
+            box-shadow: 0 1px 4px var(--shadow-color);
         }
 
         .course-card:hover {
@@ -199,7 +186,7 @@
 
         .course-image {
             width: 100%;
-            height: 100px;
+            height: 90px;
             object-fit: cover;
             display: block;
             background-color: var(--bg-color);
@@ -211,48 +198,94 @@
         }
 
         .course-info {
-            padding: 0.8rem;
+            padding: 0.6rem;
             background-color: var(--container-bg);
             position: relative;
             z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: calc(100% - 90px);
+            overflow: hidden;
         }
 
         .course-title {
             color: var(--text-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 0.3rem;
-            line-height: 1.3;
+            margin-bottom: 0.2rem;
+            line-height: 1.2;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
-            height: 2.4em;
+            height: 2.2em;
+            text-overflow: ellipsis;
         }
 
         .course-instructor {
             color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-bottom: 0.3rem;
+            font-size: 0.75rem;
+            margin-bottom: 0.4rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .price-section {
+            margin-top: auto;
+            text-align: center;
+            width: 100%;
         }
 
         .course-price {
             margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .original-price {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-decoration: line-through;
+            white-space: nowrap;
         }
 
         .discount-price {
-            font-size: 1rem;
+            font-size: 0.9rem;
+            color: #a435f0;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(164, 53, 240, 0.2);
+            white-space: nowrap;
         }
 
         .discount-timer {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
+            color: #a435f0;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .discount-price {
+                color: #b66df2;
+            }
+            .discount-timer {
+                color: #b66df2;
+            }
         }
 
         @media (max-width: 1200px) {
+            .maintenance-container {
+                max-width: 800px;
+            }
+            
             .courses-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -264,21 +297,25 @@
             }
 
             .courses-grid {
-                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
             }
 
             .course-image {
-                height: 90px;
+                height: 80px;
             }
         }
 
         @media (max-width: 480px) {
+            .maintenance-container {
+                padding: 0.8rem;
+            }
+
             .courses-grid {
                 grid-template-columns: 1fr;
             }
 
             .course-image {
-                height: 120px;
+                height: 100px;
             }
         }
     </style>
@@ -312,49 +349,65 @@
                 <a href="https://www.udemy.com/course/python-programming-tutorial-for-beginners/" class="course-card">
                     <img src="https://img-c.udemycdn.com/course/480x270/394676_ce3d_5.jpg" alt="Python 程式設計入門" class="course-image">
                     <div class="course-info">
-                        <h4 class="course-title">Python 程式設計入門：從零開始學習</h4>
-                        <p class="course-instructor">講師：John Doe</p>
-                        <p class="course-price">
-                            <span class="original-price">NT$ 1,280</span>
-                            <span class="discount-price">NT$ 299</span>
-                        </p>
-                        <p class="discount-timer">2 小時後優惠價</p>
+                        <div>
+                            <h4 class="course-title">Python 程式設計入門：從零開始學習</h4>
+                            <p class="course-instructor">講師：John Doe</p>
+                        </div>
+                        <div class="price-section">
+                            <p class="course-price">
+                                <span class="original-price">NT$ 1,280</span>
+                                <span class="discount-price">NT$ 299</span>
+                            </p>
+                            <p class="discount-timer">2 小時後優惠價</p>
+                        </div>
                     </div>
                 </a>
                 <a href="https://www.udemy.com/course/web-development-bootcamp/" class="course-card">
                     <img src="https://img-c.udemycdn.com/course/480x270/1565838_e54e_16.jpg" alt="網頁開發全端課程" class="course-image">
                     <div class="course-info">
-                        <h4 class="course-title">網頁開發全端課程：HTML, CSS, JavaScript</h4>
-                        <p class="course-instructor">講師：Jane Smith</p>
-                        <p class="course-price">
-                            <span class="original-price">NT$ 1,680</span>
-                            <span class="discount-price">NT$ 299</span>
-                        </p>
-                        <p class="discount-timer">2 小時後優惠價</p>
+                        <div>
+                            <h4 class="course-title">網頁開發全端課程：HTML, CSS, JavaScript</h4>
+                            <p class="course-instructor">講師：Jane Smith</p>
+                        </div>
+                        <div class="price-section">
+                            <p class="course-price">
+                                <span class="original-price">NT$ 1,680</span>
+                                <span class="discount-price">NT$ 299</span>
+                            </p>
+                            <p class="discount-timer">2 小時後優惠價</p>
+                        </div>
                     </div>
                 </a>
                 <a href="https://www.udemy.com/course/data-science-machine-learning/" class="course-card">
                     <img src="https://img-c.udemycdn.com/course/480x270/950390_270f_3.jpg" alt="資料科學與機器學習" class="course-image">
                     <div class="course-info">
-                        <h4 class="course-title">資料科學與機器學習實戰課程</h4>
-                        <p class="course-instructor">講師：Mike Johnson</p>
-                        <p class="course-price">
-                            <span class="original-price">NT$ 2,280</span>
-                            <span class="discount-price">NT$ 299</span>
-                        </p>
-                        <p class="discount-timer">2 小時後優惠價</p>
+                        <div>
+                            <h4 class="course-title">資料科學與機器學習實戰課程</h4>
+                            <p class="course-instructor">講師：Mike Johnson</p>
+                        </div>
+                        <div class="price-section">
+                            <p class="course-price">
+                                <span class="original-price">NT$ 2,280</span>
+                                <span class="discount-price">NT$ 299</span>
+                            </p>
+                            <p class="discount-timer">2 小時後優惠價</p>
+                        </div>
                     </div>
                 </a>
                 <a href="https://www.udemy.com/course/artificial-intelligence-ai/" class="course-card">
-                    <img src="https://img-c.udemycdn.com/course/480x270/1261458_9db7_7.jpg" alt="人工智慧與深度學習" class="course-image">
+                    <img src="https://img-c.udemycdn.com/course/480x270/1879018_95b6_3.jpg" alt="人工智慧與深度學習" class="course-image">
                     <div class="course-info">
-                        <h4 class="course-title">人工智慧與深度學習實務應用</h4>
-                        <p class="course-instructor">講師：Sarah Chen</p>
-                        <p class="course-price">
-                            <span class="original-price">NT$ 2,480</span>
-                            <span class="discount-price">NT$ 299</span>
-                        </p>
-                        <p class="discount-timer">2 小時後優惠價</p>
+                        <div>
+                            <h4 class="course-title">人工智慧與深度學習實務應用</h4>
+                            <p class="course-instructor">講師：Sarah Chen</p>
+                        </div>
+                        <div class="price-section">
+                            <p class="course-price">
+                                <span class="original-price">NT$ 2,480</span>
+                                <span class="discount-price">NT$ 299</span>
+                            </p>
+                            <p class="discount-timer">2 小時後優惠價</p>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -392,3 +445,4 @@
     </script>
 </body>
 </html>
+
