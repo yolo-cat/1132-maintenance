@@ -68,24 +68,6 @@
             line-height: 1.6;
         }
 
-        .home-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
-        }
-
-        .home-button:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
-        }
-
         /* 響應式設計 */
         @media (max-width: 768px) {
             .maintenance-container {
@@ -105,11 +87,6 @@
                 width: 50px;
                 height: 50px;
             }
-
-            .home-button {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -125,6 +102,86 @@
                 padding: 1rem;
             }
         }
+
+        .notification-form {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+        }
+
+        .submit-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            display: none;
+            color: #28a745;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .error-message {
+            display: none;
+            color: #dc3545;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .notification-form {
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+            }
+
+            .form-group input {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+
+            .submit-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -132,7 +189,52 @@
         <div class="loading-icon"></div>
         <h1>網站維護中</h1>
         <h2>我們正在進行系統維護，預計將於 2 小時內完成。<br>造成不便，敬請見諒。</h2>
-        <a href="/" class="home-button">返回首頁</a>
+        
+        <div class="notification-form">
+            <h3>網站恢復時通知我</h3>
+            <form id="notificationForm" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="email">電子郵件</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="請輸入您的電子郵件">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <button type="submit" class="submit-button">訂閱通知</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                感謝您的訂閱！我們將在網站恢復時通知您。
+            </div>
+        </div>
     </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const emailError = document.getElementById('emailError');
+            const successMessage = document.getElementById('successMessage');
+            const form = document.getElementById('notificationForm');
+
+            // 重置錯誤訊息
+            emailError.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            // 驗證電子郵件格式
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = '請輸入有效的電子郵件地址';
+                emailError.style.display = 'block';
+                return false;
+            }
+
+            // 這裡可以添加發送資料到後端的程式碼
+            // 模擬成功提交
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            return false;
+        }
+    </script>
 </body>
 </html>
