@@ -77,7 +77,16 @@
             gap: 0.8rem;
         }
 
+        .header-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
         .udemy-logo {
+            flex-shrink: 0;
             width: 90px;
             height: 32px;
             margin-bottom: 0.8rem;
@@ -93,26 +102,31 @@
             }
         }
 
+        .maintenance-message {
+            flex: 1;
+        }
+
+        .maintenance-message h1 {
+            margin-bottom: 0.4rem;
+            font-size: 1.8rem;
+        }
+
+        .maintenance-message h2 {
+            font-size: 0.95rem;
+            line-height: 1.3;
+            margin: 0;
+        }
+
         .loading-icon {
             width: 35px;
             height: 35px;
             margin: 0 auto 0.8rem;
         }
 
-        h1 {
-            margin-bottom: 0.4rem;
-            font-size: 1.8rem;
-        }
-
-        h2 {
-            font-size: 0.95rem;
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-
         .notification-form {
-            margin-top: 0.8rem;
-            padding-top: 0.8rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
         }
 
         .notification-form h3 {
@@ -156,8 +170,7 @@
         }
 
         .popular-courses {
-            margin-top: 0.8rem;
-            padding-top: 0.8rem;
+            margin: 2rem 0;
         }
 
         .popular-courses h3 {
@@ -303,6 +316,20 @@
             .course-image {
                 height: 80px;
             }
+
+            .header-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .maintenance-message h1 {
+                font-size: 1.5rem;
+            }
+
+            .maintenance-message h2 {
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -322,26 +349,15 @@
 </head>
 <body>
     <div class="maintenance-container">
-        <div class="udemy-logo"></div>
-        <div class="loading-icon"></div>
-        <h1>網站維護中</h1>
-        <h2>我們正在進行系統維護，預計將於 2 小時內完成。<br>造成不便，敬請見諒。</h2>
-        
-        <div class="notification-form">
-            <h3>恢復時通知我</h3>
-            <form id="notificationForm" onsubmit="return handleSubmit(event)">
-                <div class="form-group">
-                    <label for="email">電子郵件</label>
-                    <input type="email" id="email" name="email" required 
-                           placeholder="請輸入您的電子郵件">
-                    <div class="error-message" id="emailError"></div>
-                </div>
-                <button type="submit" class="submit-button">訂閱通知</button>
-            </form>
-            <div class="success-message" id="successMessage">
-                感謝您的訂閱！我們將在恢復時通知您。
+        <div class="header-section">
+            <div class="udemy-logo"></div>
+            <div class="maintenance-message">
+                <h1>網站維護中</h1>
+                <h2>我們正在進行系統維護，預計將於 2 小時內完成。<br>造成不便，敬請見諒。</h2>
             </div>
         </div>
+
+        <div class="loading-icon"></div>
 
         <div class="popular-courses">
             <h3>熱門課程推薦</h3>
@@ -410,6 +426,22 @@
                         </div>
                     </div>
                 </a>
+            </div>
+        </div>
+
+        <div class="notification-form">
+            <h3>恢復時通知我</h3>
+            <form id="notificationForm" onsubmit="return handleSubmit(event)">
+                <div class="form-group">
+                    <label for="email">電子郵件</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="請輸入您的電子郵件">
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                <button type="submit" class="submit-button">訂閱通知</button>
+            </form>
+            <div class="success-message" id="successMessage">
+                感謝您的訂閱！我們將在恢復時通知您。
             </div>
         </div>
     </div>
