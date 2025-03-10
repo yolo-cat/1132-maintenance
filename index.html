@@ -205,6 +205,7 @@
             overflow: hidden;
             transition: transform 0.3s ease;
             box-shadow: 0 1px 4px var(--shadow-color);
+            width: 100%;
         }
 
         .course-card:hover {
@@ -304,11 +305,7 @@
 
         @media (max-width: 1200px) {
             .maintenance-container {
-                max-width: 800px;
-            }
-            
-            .courses-grid {
-                grid-template-columns: repeat(2, 1fr);
+                max-width: 1200px;
             }
         }
 
@@ -320,6 +317,7 @@
             }
 
             .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
             }
 
