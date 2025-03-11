@@ -94,9 +94,9 @@
 
         .udemy-logo {
             flex-shrink: 0;
-            width: 90px;
-            height: 32px;
-            margin-bottom: 0.8rem;
+            width: 120px;
+            height: 42px;
+            margin: 0;
             background-image: url('https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg');
             background-size: contain;
             background-repeat: no-repeat;
@@ -111,17 +111,29 @@
 
         .maintenance-message {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .maintenance-message h1 {
-            margin-bottom: 0.4rem;
-            font-size: 1.8rem;
+            margin: 0;
+            font-size: 2rem;
+            color: var(--text-color);
         }
 
         .maintenance-message h2 {
-            font-size: 0.95rem;
-            line-height: 1.3;
+            font-size: 1rem;
+            line-height: 1.4;
             margin: 0;
+            color: var(--text-secondary);
         }
 
         .countdown {
@@ -362,13 +374,11 @@
             }
 
             .maintenance-message h1 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
+                font-size: 1.8rem;
             }
 
             .maintenance-message h2 {
-                font-size: 0.9rem;
-                line-height: 1.4;
+                font-size: 0.95rem;
             }
 
             .course-title {
@@ -395,6 +405,11 @@
 
             .course-price {
                 gap: 0.3rem;
+            }
+
+            .udemy-logo {
+                width: 100px;
+                height: 36px;
             }
         }
 
@@ -429,6 +444,19 @@
             .course-price {
                 gap: 0.4rem;
             }
+
+            .udemy-logo {
+                width: 90px;
+                height: 32px;
+            }
+
+            .maintenance-message h1 {
+                font-size: 1.6rem;
+            }
+
+            .maintenance-message h2 {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -438,8 +466,10 @@
             <div class="header-content">
                 <div class="udemy-logo"></div>
                 <div class="maintenance-message">
-                    <center><h1>網站維護中</h1>
-                    <h2>預計將於 <span class="countdown" id="countdown">2:00:00</span> 內完成</h2></center>
+                    <div class="brand-header">
+                        <h1>網站維護中</h1>
+                    </div>
+                    <h2>預計將於 <span class="countdown" id="countdown">2:00:00</span> 內完成</h2>
                 </div>
             </div>
             <div class="notification-form">
@@ -458,9 +488,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="loading-icon"></div>
-
         <div class="popular-courses">
             <h3>熱門課程推薦</h3>
             <div class="courses-grid">
