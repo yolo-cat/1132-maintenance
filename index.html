@@ -124,6 +124,19 @@
             margin: 0;
         }
 
+        .countdown {
+            color: #a435f0;
+            font-weight: 700;
+            display: inline-block;
+            padding: 0 0.3rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .countdown {
+                color: #b66df2;
+            }
+        }
+
         .loading-icon {
             width: 35px;
             height: 35px;
@@ -426,7 +439,7 @@
                 <div class="udemy-logo"></div>
                 <div class="maintenance-message">
                     <h1>網站維護中</h1>
-                    <h2>我們正在進行系統維護，預計將於 2 小時內完成。<br>造成不便，敬請見諒。</h2>
+                    <h2>我們正在進行系統維護，預計將於 <span class="countdown" id="countdown">2:00:00</span> 內完成。<br>造成不便，敬請見諒。</h2>
                 </div>
             </div>
             <div class="notification-form">
@@ -547,6 +560,43 @@
             
             return false;
         }
+
+        // 倒數計時功能
+        function startCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let hours = 2;
+            let minutes = 0;
+            let seconds = 0;
+
+            function updateDisplay() {
+                const displayHours = String(hours).padStart(1, '0');
+                const displayMinutes = String(minutes).padStart(2, '0');
+                const displaySeconds = String(seconds).padStart(2, '0');
+                countdownElement.textContent = `${displayHours}:${displayMinutes}:${displaySeconds}`;
+            }
+
+            const timer = setInterval(() => {
+                if (seconds > 0) {
+                    seconds--;
+                } else if (minutes > 0) {
+                    minutes--;
+                    seconds = 59;
+                } else if (hours > 0) {
+                    hours--;
+                    minutes = 59;
+                    seconds = 59;
+                } else {
+                    clearInterval(timer);
+                    return;
+                }
+                updateDisplay();
+            }, 1000);
+
+            updateDisplay();
+        }
+
+        // 啟動倒數計時
+        startCountdown();
     </script>
 </body>
 </html>
